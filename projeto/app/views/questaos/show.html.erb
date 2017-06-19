@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Texto:</b>
+  <%= @questao.texto %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @questao.data %>
+</p>
+
+
+<%= link_to 'Edit', edit_questao_path(@questao) %> |
+<%= link_to 'Back', questaos_path %>
