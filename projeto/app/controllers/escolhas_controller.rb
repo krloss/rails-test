@@ -1,4 +1,6 @@
 class EscolhasController < ApplicationController
+	http_basic_authenticate_with :name=>'user', :password=>'pass', :only=>:destroy
+
 	def create
 		@questao = Questao.find(params[:questao_id])
 		@escolha = @questao.escolhas.create(params[:escolha])

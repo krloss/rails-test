@@ -1,4 +1,6 @@
 class QuestaosController < ApplicationController
+  http_basic_authenticate_with :name=>'user', :password=>'pass', :except=>[:index,:show]
+  
   # GET /questaos
   # GET /questaos.json
   def index
