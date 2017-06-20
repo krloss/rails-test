@@ -12,7 +12,7 @@
 
 <p>
 	<b>Respostas:</b>
-	<%= @questao.respostas.map{|it| it.texto}.join(', ') %>
+	<%= join_respostas(@questao) %>
 </p>
 
 <h2>Escolhas</h2>
