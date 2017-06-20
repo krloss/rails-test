@@ -11,29 +11,10 @@
 </p>
 
 <h2>Escolhas</h2>
-<%= @questao.escolhas.each do |it| %>
-	<p>
-		<b>Escolha:</b>
-		<%= it.texto %>
-	</p>
-	<p>
-		<b>Votos:</b>
-		<%= it.voto %>
-	</p>
-<% end %>
+<%= render @questao.escolhas %>
 
 <h2>Insere Escolha:</h2>
-<%= form_for([@questao, @questao.escolhas.build]) do |f| %>
-	<div class="field">
-		<%= f.label :texto %>
-		<%= f.text_area :texto %>
-	</div>
-	<div class="field">
-		<%= f.label :voto %>
-		<%= f.text_field :voto %>
-	</div>
-	<div class="actions"> <%= f.submit %> </div>
-<% end %>
+<%= render 'escolhas/form' %>
 
 <%= link_to 'Edit', edit_questao_path(@questao) %> |
 <%= link_to 'Back', questaos_path %>

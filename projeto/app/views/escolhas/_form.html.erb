@@ -1,0 +1,11 @@
+<%= form_for([@questao, @questao.escolhas.build]) do |f| %>
+	<div class="field">
+		<%= f.label :texto %>
+		<%= f.text_area :texto %>
+	</div>
+	<div class="field">
+		<%= f.label :voto %>
+		<%= f.text_field :voto %>
+	</div>
+	<div class="actions"> <%= f.submit %> </div>
+<% end %>
