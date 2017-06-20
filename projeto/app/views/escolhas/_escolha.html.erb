@@ -7,3 +7,6 @@
 	<%= escolha.voto %>
 </p>
 <p>
+	<%= link_to 'Remover Escolha', [escolha.questao, escolha],
+		:confirm=>'Esta Seguro?', :method=>:delete %>
+</p>

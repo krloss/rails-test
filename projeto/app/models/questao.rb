@@ -4,5 +4,5 @@ class Questao < ActiveRecord::Base
 	validates :data, :presence=>true
 	validates :texto, :presence=>true, :length=>{:minimum=>5}
 
-	has_many :escolhas
+	has_many :escolhas, :dependent=>:destroy
 end
