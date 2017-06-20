@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170619111809) do
+ActiveRecord::Schema.define(:version => 20170620051658) do
 
   create_table "escolhas", :force => true do |t|
     t.text     "texto"
@@ -29,5 +29,14 @@ ActiveRecord::Schema.define(:version => 20170619111809) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "resposta", :force => true do |t|
+    t.string   "texto"
+    t.integer  "questao_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "resposta", ["questao_id"], :name => "index_resposta_on_questao_id"
 
 end

@@ -1,4 +1,6 @@
-<%= form_for(@questao) do |f| %>
+<% @questao.respostas.build %>
+
+<%= form_for(@questao) do |qf| %>
   <% if @questao.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@questao.errors.count, "error") %> prohibited this questao from being saved:</h2>
@@ -12,14 +14,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :texto %><br />
-    <%= f.text_field :texto %>
+    <%= qf.label :texto %><br />
+    <%= qf.text_field :texto %>
   </div>
   <div class="field">
-    <%= f.label :data %><br />
-    <%= f.date_select :data %>
+    <%= qf.label :data %><br />
+    <%= qf.date_select :data %>
   </div>
+
+  <h2>Respostas</h2>
+  <%= render :partial=>'respostas/form', :locals=>{:form=>qf} %>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= qf.submit %>
   </div>
 <% end %>

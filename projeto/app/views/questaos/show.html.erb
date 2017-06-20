@@ -10,6 +10,11 @@
   <%= @questao.data %>
 </p>
 
+<p>
+	<b>Respostas:</b>
+	<%= @questao.respostas.map{|it| it.texto}.join(', ') %>
+</p>
+
 <h2>Escolhas</h2>
 <%= render @questao.escolhas %>
 
